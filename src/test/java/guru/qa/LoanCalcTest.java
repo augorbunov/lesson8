@@ -72,10 +72,6 @@ public class LoanCalcTest extends TestBase {
     @ParameterizedTest
     @DisplayName("Проверка расчета при задании срока кредита в месяцах или годах. Источник данных: MethodSource")
     void checkCalculationForDifferentTypesOfPeriod(Period period, List<String> loanParameters) {
-//        open("https://ru.selenide.org/");
-//        $$("#languages a").find(text(language.name())).click();
-//        $$(".main-menu-pages a").filter(visible)
-//                .shouldHave(texts(expectedButtons));
 
         $("[name=\"cost\"]").setValue(loanParameters.get(0));
         $("[name=\"start_sum\"]").setValue(loanParameters.get(1));
@@ -89,15 +85,3 @@ public class LoanCalcTest extends TestBase {
         $(".calc-result-value.result-placeholder-monthlyPayment").shouldHave(text(loanParameters.get(4)));
     }
 }
-
-
-//
-//    @MethodSource
-//    @ParameterizedTest
-//    void selenideSiteShouldDisplayCorrectButtons(Language language, List<String> expectedButtons, Person person) {
-//        open("https://ru.selenide.org/");
-//        $$("#languages a").find(text(language.name())).click();
-//        $$(".main-menu-pages a").filter(visible)
-//                .shouldHave(texts(expectedButtons));
-//    }
-//}
