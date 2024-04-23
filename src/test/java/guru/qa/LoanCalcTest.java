@@ -54,7 +54,6 @@ public class LoanCalcTest extends TestBase {
         $(".calc-result-value.result-placeholder-monthlyPayment").shouldHave(text(monthlyPayment));
     }
 
-
     static Stream<Arguments> checkCalculationForDifferentTypesOfPeriod() {
         return Stream.of(
                 Arguments.of(
@@ -77,8 +76,6 @@ public class LoanCalcTest extends TestBase {
         $("[name=\"start_sum\"]").setValue(loanParameters.get(1));
         $("[name=\"period\"]").setValue(loanParameters.get(2));
         $("[name=\"percent\"]").setValue(loanParameters.get(3));
-
-        //$(("[name=\"period_type\"] [value=\"M\"]").)
         $(String.format("[name=\"period_type\"] [value=\"%s\"]", period)).click();
         $(".calc-submit").click();
 
